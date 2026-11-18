@@ -46,8 +46,6 @@ jobs:
     permissions:
       id-token: write #This is required for requesting the JWT
       contents: read #This is required for actions/checkout
-    env:
-      SCM_DO_BUILD_DURING_DEPLOYMENT: false
 
     steps:
       - name: Download artifact from build job
@@ -58,9 +56,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_1EC4862C8F6D461BA49DC66633AD24C4 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_9FCD15CF57AD4CF0B8E12B40932F70C6 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_79D0861333644CD9BE5F58FCBF49915A }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_A4846001047B4BAF95426CA22F5BF253 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_438ECF60BF9A4E11A6A76F7CFFDE3E8F }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_3A887979C5D34E3CA854EA0A4EB7EE1F }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
